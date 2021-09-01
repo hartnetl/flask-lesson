@@ -1,0 +1,20 @@
+Python expeccts templates to be in a folder called template at the same level as the app
+
+{{ These brackets }} has the output which is output on the screen, or elsewhere
+{% These ones %} control the flow, so for loops, if statements, base templates etc.
+
+block content -> content can be any word
+
+bootstrap url
+wget https://github.com/StartBootstrap/startbootstrap-clean-blog/archive/refs/tags/v5.0.10.zip
+
+https://github.com/startbootstrap/startbootstrap-clean-blog/archive/gh-pages.zip
+
+INSTALLING THE THEME
+
+In the terminal:
+    mkdir static                    //makes directory and calls it static. It used to be 'assets'
+    cd static 
+    wget https://github.com/startbootstrap/startbootstrap-clean-blog/archive/gh-pages.zip
+    ls 
+    unzip fileName
