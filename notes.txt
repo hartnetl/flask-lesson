@@ -51,4 +51,19 @@ DEPLOY TO HEROKU
             You'll get an error because there's no requirements.txt
 
     Create a requirements.txt file
-        
+        pip3 freeze --local > requirements.txt
+            Now it should work as python was specified
+
+    Make procfile - it tells heroku how to run the application
+        echo web: python run.py > Procfile
+
+    When pushed now it will work, but the form doesn't because of the secret key.
+        Go to setting on heroku -> config vars
+            IP : 0.0.0.0
+            PORT : 5000 (we set these at app.run in run.py)
+            SECRET_KEY : my_secret_flash_key   (we set this in env.py)
+
+
+
+To view most recent app build
+    heroku logs --tail --app APP-NAME
