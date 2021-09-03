@@ -7,8 +7,9 @@
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"> -->
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}"> -->
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     
     <title>Hello Flask</title>
 </head>
@@ -93,7 +94,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2021</div>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Laura Hartnett @ the Code Institute <span id="copyright"></span></div>
                     </div>
                 </div>
             </div>
@@ -111,6 +112,10 @@
 	
 	<!-- Custom scripts for this template -->
 	<script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
+
+    <script>
+        $("#copyright").text(new Date().getFullYear()); // this get the current year
+    </script>
     </body>
 </body>
 </html>
