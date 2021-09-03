@@ -28,3 +28,27 @@ TESTING FORM DATA
 FLASH MESSAGES NEED A SECRET KEY
     creat an env.py file and make your secret key
     Make sure its in your gitignore file
+
+
+DEPLOY TO HEROKU
+
+    Create a heroku app
+
+    In the terminal type npm install -g HEROKU
+    heroku login -i
+    heroku apps
+
+    RENAMING HEROKU FILES
+        heroku apps:rename this-is-my-new-title -- app the-old-title
+
+    connect git remote to heroku
+        Ensure everything is commited
+        Go to setting on Heroku site to get git url (https://git.heroku.com/ci-thorin-flask-lesson-example.git)
+        In your terminal:
+        git remote add heroku https://git.heroku.com/ci-thorin-flask-lesson-example.git
+        git remote -v           // To check the heroku link worked
+        gitpod /workspace/flask-lesson $ git push -u heroku main
+            You'll get an error because there's no requirements.txt
+
+    Create a requirements.txt file
+        
