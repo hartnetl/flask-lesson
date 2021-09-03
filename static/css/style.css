@@ -2,7 +2,12 @@
     width: 100%;
 }
 
-#thorin-oakenshield{
-    height: 80%;
-    width: 80%;
+.flashes {
+    background-color: rgb(235, 235, 166);
+    list-style-type: none;
+    width: fit-content;
+    padding-right: 40px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
 }

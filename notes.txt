@@ -24,3 +24,7 @@ TESTING FORM DATA
 
     In your python terminal you get code 404 / 405 if form isn't working
     When you input data and get 200 as a return for your post in the terminal it works
+
+FLASH MESSAGES NEED A SECRET KEY
+    creat an env.py file and make your secret key
+    Make sure its in your gitignore file

@@ -1,6 +1,8 @@
 import os
 import json
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash
+if os.path.exists("env.py"):
+    import env
 
 # create an instance of the class Flask and storing it in a variable called app
 # The first argument of the Flask class, is the name of the application's
@@ -8,6 +10,7 @@ from flask import Flask, render_template, request
 # Since we're just using a single module, we can use __name__ which is a
 # built-in Python variable.
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY")
 
 
 # @ is a decorator, which is a function wrapper
@@ -47,9 +50,12 @@ def about_member(member_name):
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
-        print(request.form.get("name"))
-        print(request.form["email"])
-        print(request.form["message"])
+        # This format returns 'none' if there is no value or key
+        # print(request.form.get("name"))
+        # This format throws an exception if there is no value or key
+        # print(request.form["email"])
+        flash("Thanks {}, we have received your message!".format(
+            request.form.get("name")))
     return render_template("contact.html", page_title="Contact")
 
 
