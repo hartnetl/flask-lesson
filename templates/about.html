@@ -2,6 +2,18 @@
 
 {%block content%}
 
+<!-- {{list_of_numbers}} This prints as it is typed as it is a statement { { statement } } [1,2,3] -->
+
+<!-- This is for expressions { % expression % } -->
+<!-- As usual here number can be anything, but keep it related -->
+<!-- This prints 1, 2, and 3 on different lines -->
+
+<!-- {% for number in list_of_numbers %}
+<p>{{ number }}</p>
+{% endfor %} -->
+
+
+
 <h2>{{page_title}}</h2>
 
 <p>
@@ -14,294 +26,21 @@
     planned to leave on other business, welcomed a fourteenth to fill into their party.
 </p>
 
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Thorin Oakenshield</h3>
-        <p>
-            Thorin II was born in TA 2746 to Dwarven prince Thráin II in the city of The Lonely Mountain. Early in
-            his youth, he and the other Dwarves of the Lonely Mountain were forced to flee by the dragon Smaug in TA
-            2770. While in exile, he quickly grew to become a capable warrior. This was demonstrated when he
-            participated in the Battle of Azanulbizar in TA 2799. He fought with one of the Dwarven armies beneath
-            the East-gate of Moria. At some point in the fighting, his shield broke, and using an oaken tree branch
-            found on the floor as a shield, he gained the epithet "Oakenshield," which would remain with him even in
-            death.
-            Thorin eventually became King-in-Exile of Durin's Folk after his father went missing, and died in the
-            dungeons of Dol Guldur.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/2/29/Thorin_Oakenshield.jpg"
-            alt="Lego Thorin Oakenshield" id="thorin-oakenshield">
-    </div>
-</div>
+    {% for member in company %}
 
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://i.pinimg.com/originals/90/ef/1d/90ef1d960eb7e317e77bc990c9c91a13.jpg"
-            alt="Filli and Killi lego">
-    </div>
-    <div class="col-md-7">
-        <h3>Fili and Kili</h3>
-        <p>
-            Fíli and Kíli were nephews of Thorin, who was the elder brother of their mother Dís. They were also nephews
-            of Frerin, grandsons of Thráin II, and great-grandsons of Thrór. Fíli's most distinguishing feature was his
-            long nose, the longest of any of the Dwarves in Thorin's company.
-        </p>
-    </div>
-</div>
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h3>{{ member.name }}</h3>
+                <p>
+                    {{ member.description }}
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ member.image_source }}" alt="Member image" class="featurette-image image-responsive">
+            </div>
+        </div>
 
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Oin</h3>
-        <p>
-            Óin was the older brother of Glóin, cousin of Dwalin and Balin, and uncle of Gimli. Óin's uncle was Fundin,
-            the father of Balin and Dwalin. He usually wore a brown-hooded cloak when travelling. Óin fought in the
-            Battle of Azanulbizar along with Thorin Oakenshield, and in TA 2941 joined with Thorin and Company on the
-            quest to reclaim the Lonely Mountain wearing a brown hood.[2] Óin was one of the Dwarves who bet that Bilbo
-            would come along with them to reclaim the Lonely Mountain. Óin and his brother Glóin were usually in charge
-            of preparing the fire for the Company as they were the most skilled out of the others. He fought in and
-            survived the Battle of Five Armies, and later settled in the Lonely Mountain with King Dáin II Ironfoot,
-            along with many other dwarves of The Company of Thorin.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/c/c9/LEGO_Oin.jpg" alt="LEGO Oin">
-    </div>
-</div>
+        <hr class="featurette-divider">
 
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/7/70/LEGO_Gloin.jpg" alt="LEGO Gloin">
-    </div>
-    <div class="col-md-7">
-        <h3>Gloin</h3>
-        <p>
-            Glóin was born in TA 2783, after the Dragon Smaug desolated Erebor. He was the younger child of Gróin and
-            younger brother of Óin.
-
-            In TA 2799, Glóin was known to have fought in the Battle of Azanulbizar, the last battle of the War of the
-            Dwarves and Orcs, though it is unknown how significant his contribution was, being 16 years old.
-
-            In TA 2879, in the Blue Mountains, while in exile, his son Gimli was born to him and an unknown wife. In
-            March of TA 2941 in Bree, Thorin Oakenshield met by chance the wizard Gandalf the Grey, pushing Thorin to
-            reclaim Erebor, so that Smaug wouldn't start an alliance with Sauron. When Gandalf mentioned Hobbits, Glóin
-            referred them as "simpletons" and also said that Hobbits "would never dare to come within smelling distance
-            of the nakedest dragonet new from the shell".
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Balin</h3>
-        <p>
-            Balin was likely born in the Lonely Mountain before the coming of the dragon Smaug. He had a younger brother
-            named Dwalin, and was amongst those driven from their homes when Smaug attacked the Lonely Mountain.
-            Afterwards, he may have lived in Dunland as a refugee, before fighting in the War of the Dwarves and Orcs
-            which culminated in the Battle of Azanulbizar. Many years later, in approximately TA 2841, he accompanied
-            Thráin II, the father of Thorin, when he attempted to go back to the Lonely Mountain himself, but Thráin was
-            captured and lost
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://i.ebayimg.com/images/g/U-sAAOSwkkFdVa7Y/s-l300.png" alt="LEGO Balin">
-    </div>
-</div>
-
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/b/b7/Lego_Dwalin.jpg" alt="LEGO Dwalin">
-    </div>
-    <div class="col-md-7">
-        <h3>Dwalin</h3>
-        <p>
-            Born in TA 2772, two years after the dragon Smaug had desolated Erebor, Dwalin was the son of Fundin and
-            younger brother of Balin. After fighting in the Battle of Azanulbizar at the age of 27, Dwalin accompanied
-            Thráin II and Thorin Oakenshield to settle peacefully in the northern Ered Luin.
-
-            Later in TA 2841, Dwalin, along with his brother Balin, and a few others accompanied Thráin when he left the
-            Ered Luin on a Quest to reclaim Erebor. The small party was dogged by the emissaries of Sauron. In TA 2845,
-            Thráin was captured one night when he and his companions sheltered under the eaves of Mirkwood from a black
-            rain. After a fruitless search for their king, the Dwarves gave up and returned to Thorin to inform him the
-            news.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Ori</h3>
-        <p>
-            Ori lived in Thorin's Halls in the northern Blue Mountains for many years. In the year TA 2941, Ori became a
-            member of Thorin's Company and travelled with Thorin, Gandalf, Bilbo Baggins, and the other dwarves on the
-            quest for the Lonely Mountain, culminating in the death of Smaug. Finally, he and the other dwarves of
-            Thorin's Company fought in the Battle of Five Armies, which he survived.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/c/c7/Ori.jpg" alt="LEGO Ori">
-    </div>
-</div>
-
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src=" https://static.wikia.nocookie.net/lotr/images/d/d1/Dori.jpg" alt=" LEGO Dori">
-    </div>
-    <div class="col-md-7">
-        <h3>Dori</h3>
-        <p>
-            Before the Quest of Erebor, Dori lived in Thorin's Halls in the northern Blue Mountains with Nori and Ori.
-            In TA 2941, the three became part of Thorin and Company, befriending Bilbo Baggins and traveling with him in
-            search of Smaug's treasure at the Lonely Mountain.
-
-            It fell to Dori to carry Bilbo Baggins in the tunnels of the Misty Mountains during the escape from the
-            Goblins, but Dori dropped Bilbo, and the other Dwarves and Gandalf blamed him for "losing their burglar."
-            Later, during their escape from the Wargs and Orcs, Dori helped Bilbo climb a tree to get away from the
-            wargs. Bilbo shortly thereafter saved Dori by grabbing his legs as they were rescued by the Great Eagles and
-            taken to their eyrie from the Misty Mountains. When Gandalf tells their tale to the skin-changer Beorn and
-            brings forward the company, Dori came first, along with Thorin.
-
-            Dori fought in and survived the Battle of Five Armies. He likely returned to the Lonely Mountain, where he
-            survived up until the time of the Council of Elrond and the War of the Ring, most likely fighting in the
-            Battle of Dale, though his exact death date is unknown.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Nori</h3>
-        <p>
-            Nori, as was his brother Dori, was a capable flutist, and both seem to have carried their flutes with them.
-            Both shared Bilbo's liking for regular meals. Before the Quest for the Lonely Mountain, Nori lived in
-            Thorin's Halls in the northern Blue Mountains with his two brothers.
-
-            In TA 2941, Nori, along with Dori and Ori, became part of Thorin and Company, befriending Bilbo Baggins and
-            traveling with him in search of Smaug's treasure in the Lonely Mountain. After their experience in
-            Goblin-town when the company was pursued by Wargs and Orcs and forced to climb up into some trees, Nori was
-            the first realize that Bilbo had been left on the ground and pointed him out to his brother Dori who rescued
-            Bilbo.
-
-            Nori did little to distinguish himself during the Dwarves's adventures in the wild, though he shared the
-            same array of experiences as the others of the Company: captured in turn by Trolls, Goblins, Spiders, and
-            Elves, they eventually reached the distant Lonely Mountain and recovered it for Durin's Folk. Afterwards he
-            remained in the Kingdom under the Mountain, and Glóin reported that he was still there seventy-seven years
-            later, at the time of the War of the Ring.
-
-            Nori fought in and survived the Battle of Five Armies and returned to the Lonely Mountain where he
-            established himself and grew rich. During the War of the Ring, Nori was still living in the Lonely Mountain,
-            and possibly fought in the Battle of Dale against the Easterlings.[2]
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/9/91/LEGO_Nori_.jpg" alt=" LEGO Nori">
-    </div>
-</div>
-
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src=" https://static.wikia.nocookie.net/lotr/images/9/98/LEGO_Bifur.jpg" alt="LEGO Bifur ">
-    </div>
-    <div class="col-md-7">
-        <h3>Bifur </h3>
-        <p>
-            Whilst he was a descendant of the Dwarves of Khazad-dûm, Bifur was not of Durin's Folk. Most of his familial
-            relations are unclear, and what is known of his parentage is very little. He and his family were driven out
-            of their home in the Lonely Mountain by the Dragon Smaug, and were forced to live in exile, where the Dwarf
-            warrior worked as a toy maker. Following Thorin II Oakenshield to a new life at his halls in the Blue
-            Mountains, he continued his life as a toy maker.
-
-            Quest of Erebor
-            Answering Thorin Oakenshield's Quest of Erebor, he went to the meeting at Bag End with his cousins Bofur and
-            Bombur, where he played the clarinet. On the quest, he was nearly cooked on a spit by trolls and nearly
-            killed by Goblins, Wargs, Stone giants, Great Spiders, and the dragon Smaug himself. A valiant and brave
-            warrior, Bifur never gave up, and fought in the Battle of Five Armies with all his strength, killing
-            numerous enemies. In the fallout of the great battle, Dáin II Ironfoot gave him his share of the treasure,
-            and he retired to live at the Lonely Mountain.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Bofur </h3>
-        <p>
-            Bofur's heritage is unclear, but he was not of Durin's Folk. He and his family hailed from the Blue
-            Mountains. As such, they felt less strongly about the quest to reclaim the Lonely Mountain from the dragon
-            Smaug, with more interest in adventure for its own sake.
-
-            While answering Thorin Oakenshield's quest to Erebor, Bofur went to the meeting at Bag End with his brother
-            Bombur and cousin Bifur. He accompanied Thorin, Gandalf, Bilbo Baggins, and rest of Thorin's Company across
-            Wilderland to the Lonely Mountain in order to reclaim the dwarves' treasure from the dragon Smaug. Following
-            the dragon's demise, Bofur participated in and survived the Battle of Five Armies, receiving his fourteenth
-            share of the treasure as agreed upon
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/e/eb/Bofur_in_LEGO_version.jpg" alt=" LEGO Bofur">
-    </div>
-</div>
-
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://static.wikia.nocookie.net/lotr/images/d/d2/BomburHQ.jpg " alt="LEGO Bombur ">
-    </div>
-    <div class="col-md-7">
-        <h3>Bombur </h3>
-        <p>
-            Bombur's parentage is unknown. He is the brother of Bofur and cousin of Bifur. Bombur was not of Durin's
-            line, although he was descended from the Dwarves of Moria. His birth date is unknown, though it fell
-            somewhere between TA 2763 and TA 2859; the brothers Fíli and Kíli were the youngest of the thirteen "by some
-            fifty years," and, after Thorin was captured, Balin was "the eldest left." Fíli was born in TA 2859, and
-            Balin was born in TA 2763. Bombur was thus roughly 150 years old during the quest. Prior to the journey,
-            Bombur likely resided in the Blue Mountains alongside Thorin, after the loss of Thráin II.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Bilbo Baggins </h3>
-        <p>
-            Bilbo Baggins was a hobbit of the Shire, the main protagonist of The Hobbit and a secondary character in The
-            Lord of the Rings.
-
-            Gandalf suggested to Thorin and Company that they hire Bilbo Baggins to be their burglar in the Quest of
-            Erebor, and later fought in the Battle of Five Armies. Bilbo was also one of the bearers of the One Ring,
-            and the first to voluntarily give it up, although with some difficulty. He wrote many of his adventures in a
-            book he called There and Back Again. Bilbo adopted his second-cousin-once-removed Frodo Baggins to be his
-            heir after his parents, Drogo Baggins and Primula Brandybuck, drowned in the Brandywine River.
-
-            Bilbo was the first hobbit to become famous in the world at large, and one of the few to set foot in the
-            Undying Lands.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://pbs.twimg.com/profile_images/378800000642325335/9c249166ad7d0f1d626b083d3ca1d2ea_400x400.png"
-            alt=" LEGO Bilbo">
-    </div>
-</div>
-
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src=" https://static.wikia.nocookie.net/lotr/images/a/a1/Gandalf_Lego_figure.png" alt=" LEGO Gandalf">
-    </div>
-    <div class="col-md-7">
-        <h3> Gandalf the Grey</h3>
-        <p>
-            Gandalf (Norse; IPA: [gand:alf]) the Grey, later known as Gandalf the White, and originally named Olórin
-            (Quenya; IPA: [oˈloːrin]), was an Istar (Wizard), dispatched to Middle-earth in the Third Age to combat the
-            threat of Sauron. He joined Thorin and his company to reclaim the Lonely Mountain from Smaug, convoked the
-            Fellowship of the Ring to destroy the One Ring, and led the Free Peoples in the final campaign of the War of
-            the Ring.
-        </p>
-    </div>
-</div>
-
+    {% endfor %}
 {% endblock %}
